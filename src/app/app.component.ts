@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as singleSpa from 'single-spa';
 import { updateState } from './store/store.reducer';
 
 @Component({
@@ -16,7 +15,7 @@ export class AppComponent {
 
   updateState() {
     this.store.dispatch(updateState({ name: "login" }));
-    singleSpa.navigateToUrl('/example-spa/main');
+    window.location.href = '/example-spa/main';
   }
 
   getMainState() {
